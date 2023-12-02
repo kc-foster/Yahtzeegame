@@ -170,11 +170,10 @@ def userChooseAction(list_of_dice, player_scores):
 	if (three_seen and two_seen) and not(player_scores[list(player_scores.keys())[9]]):
 		list_of_choices.append("Full_House")
 
-	# check for sequences - sequence of 4 can be the first four values or the last four
-	# sequence of 5 can only be all tallies equal 1 in the list of 5 dice
-	if (all(tallies[:4]) or all(tallies[1:5])) and not(player_scores[list(player_scores.keys())[10]]):
+	# check for sequences, small straight can be 1 of 3 possibilities, large straight 1 of 2
+	if (all(tallies[:4]) or all(tallies[1:5]) or all(tallies[2:6])) and not(player_scores[list(player_scores.keys())[10]]):
 		list_of_choices.append("Small_Straight")
-	if all(tallies) and not(player_scores[list(player_scores.keys())[11]]):
+	if (all(tallies[:5]) or all(tallies[1:6])) and not(player_scores[list(player_scores.keys())[11]]):
 		list_of_choices.append("Large_Straight")
 
 	# if the chance option has not been used, display that
