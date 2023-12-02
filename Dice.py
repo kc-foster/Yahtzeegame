@@ -1,12 +1,4 @@
-"""
-Project: Yahtzee
-Module Name: Dice.py
-Creation Date: Nov 25 2023
-Author: Casey Foster
-CSC 221
-"""
 
-# TODO: header
 
 import random
 
